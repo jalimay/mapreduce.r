@@ -13,16 +13,12 @@ import com.jd.ipc.mapreduce.r.util.RConnectionUtil;
 
 public class RMapper extends Mapper<LongWritable, Text, LongWritable, Text> {
 	private Logger log = Logger.getLogger(getClass().getName());
-	RConnection c;
-
-	@Override
-	protected void setup(Context context) throws IOException, InterruptedException {
-		c = RConnectionUtil.getRConnection();
-	};
 
 	@Override
 	protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
+		RConnection c = null;
 		try {
+			c = RConnectionUtil.getRConnection();
 			double[] i = { 1, 2, 4, 0, 1, 3, 1, 11, 1, 12, 1, 7, 1, 9, 17 };
 			c.assign("xw", i);
 			c.eval(" fit<-arima(xw,order=c(1,1,1)) ");
@@ -32,6 +28,8 @@ public class RMapper extends Mapper<LongWritable, Text, LongWritable, Text> {
 		} catch (Exception e) {
 			log.error(e);
 			throw new RuntimeException(e);
+		} finally {
+			RConnectionUtil.returnRConnection(c);
 		}
 	}
 }
