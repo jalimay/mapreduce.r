@@ -1,0 +1,46 @@
+#etl\u4e2d\u91c7\u7528\u7684\u6279\u5904\u7406\u6267\u884c\u7684\u6700\u5927\u957f\u5ea6
+etl.maxexecutebatchsize=1000
+
+#\u65b0\u54c1\u6743\u91cd\u9ed8\u8ba4\u503c
+newWeightWeek1=0.6
+newWeightWeek2=0.4
+newWeightWeekSingle=1
+
+#\u516b\u5468\u52a0\u6743\u9ed8\u8ba4
+weightWeek1=0.1
+weightWeek2=0.1
+weightWeek3=0.1
+weightWeek4=0.1
+weightWeek5=0.1
+weightWeek6=0.1
+weightWeek7=0.1
+weightWeek8=0.3
+
+#calcRetryNum
+calcRetryNum=5
+
+#\u8ba1\u7b97\u91cd\u8bd5\u5b9a\u65f6\u4efb\u52a1\u5f00\u5173 on/off
+calcRetryTimer=off
+
+#\u4e2a\u62a4\u5316\u5986\u4e00\u7ea7\u5206\u7c7bID
+MakeupSortID=1316
+
+#\u56de\u5f52\u52a0\u6743\u542f\u52a8\u5f00\u5173 on/off
+regressionweight=off
+regressionWeightCalcCron=0 00 14 * * ?
+
+
+#\u65f6\u95f4\u5e8f\u5217\u4fdd\u5b58\u5168\u56fd\u9884\u6d4b\u503con/off
+timeSeriesState=off
+#\u65f6\u95f4\u5e8f\u5217\u524d\u591a\u5c11\u5929\u7684\u9500\u91cf
+timeSeriesPreDays=0
+
+#\u4ee5\u4e0b\u662f------taobao\u8c03\u5ea6selectTasks\u51fa\u5f02\u5e38\u7684\u914d\u7f6e
+#\u51fa\u5f02\u5e38\u540esleep\u7684\u65f6\u95f4,unit:millisecond
+calc.selectTasksException.sleepMillis=300000
+#\u51fa\u5f02\u5e38\u540e\u53d1\u9001\u90ae\u4ef6\u7684\u6700\u5c0f\u65f6\u95f4\u95f4\u9694,unit:hour
+calc.selectTasksException.minSendEmailInterval=12
+
+#\u7528\u6237\u64cd\u4f5c\u8bb0\u5f55\u62e6\u622a\u5668
+userIntercepteReg=^.*$
+

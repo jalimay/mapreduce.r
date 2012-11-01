@@ -1,0 +1,7 @@
+RServeIP=10.12.210.136
+objectMaxNum=25
+waitObjectTime=1000
+disposeTime=1000
+maxIdleNum=10
+maxActiveNum=20
+minIdleNum=7
